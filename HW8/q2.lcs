@@ -1,0 +1,32 @@
+reset
+as 	lc3os.asm
+as 	q2.asm
+load 	lc3os.obj
+load 	q2.obj
+
+
+set x5000 x41
+set x5001 x77
+set x5002 x65
+set x5003 x73
+set x5004 x6F
+set x5005 x6D
+set x5006 x65
+set x5007 x21
+set x5008 x0
+
+break set STOP
+set pc x3000
+
+continue
+check x5000 x21
+check x5001 x65
+check x5002 x6D
+check x5003 x6F
+check x5004 x73
+check x5005 x65
+check x5006 x77
+check x5007 x41
+check x5008 x0
+
+

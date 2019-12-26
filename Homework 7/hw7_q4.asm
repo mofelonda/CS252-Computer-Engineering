@@ -1,0 +1,25 @@
+	.ORIG x3000
+
+	LD R0, Loc1
+	ADD R1, R1, #0
+	ADD R1, R1, #6
+
+LOOP	ADD R0, R0, #0
+	BRn Neg
+	ADD R0, R0, R0
+	BRnzp DECR
+
+NEG	ADD R0, R0, R0
+	ADD R0, R0, #1
+
+DECR	ADD R1, R1, #-1
+	BRp LOOP
+
+	ST R0, Loc2
+
+	HALT
+
+Loc1	.BLKW 1
+Loc2	.BLKW 1
+
+	.END
